@@ -76,16 +76,16 @@ docker-compose logs nginx
 docker-compose logs 
 ```
 
-## Remover todas as imagens e volumes do Docker
+## Remove all Docker images and volumes
 
-Para remover todas as imagens e volumes do Docker, execute os seguintes comandos:
+To remove all Docker images and volumes, run the following commands:
 
 ```sh
-# Remove todos os containers
+# Remove all containers
 docker rm -f $(docker ps -a -q)
 
-# Remove todas as imagens
+# Remove all images
 docker rmi -f $(docker images -q)
 
-# Remove todos os volumes
+# Remove all volumes
 docker volume rm $(docker volume ls -q)
