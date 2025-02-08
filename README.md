@@ -49,6 +49,11 @@ node-nginx-mysql-app
 
 4. Access the application at `http://localhost:8080`.
 
+## Results
+
+![alt text](./img/{4EFF5265-B457-4FB1-99D6-82DDAB246D3F}.png)
+![alt text](./img/{B84B4F7D-5B5C-47EE-8FDD-0267CD091ED7}.png)
+
 ## Usage
 
 - To add a name to the database, send a request to the root URL (`/`). The application will insert the name and return a list of all names stored in the database.
@@ -70,3 +75,17 @@ docker-compose logs nginx
 ```
 docker-compose logs 
 ```
+
+## Remover todas as imagens e volumes do Docker
+
+Para remover todas as imagens e volumes do Docker, execute os seguintes comandos:
+
+```sh
+# Remove todos os containers
+docker rm -f $(docker ps -a -q)
+
+# Remove todas as imagens
+docker rmi -f $(docker images -q)
+
+# Remove todos os volumes
+docker volume rm $(docker volume ls -q)
