@@ -18,12 +18,13 @@ services:
   app:
     build: .
     volumes:
-      - ./src:/usr/src/app/src
+      - .:/usr/src/app 
     ports:
       - "3000:3000"
     depends_on:
       db:
         condition: service_healthy
+    command: sh -c "npm install && node src/app.js" 
 
   nginx:
     image: nginx:latest
